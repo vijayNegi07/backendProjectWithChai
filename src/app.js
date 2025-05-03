@@ -1,5 +1,4 @@
-
-import express from express;
+import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
@@ -24,6 +23,13 @@ app.use(express.static("public"))
 
 //it stores the cookie in the browser from the server
 app.use(cookieParser());
+
+
+//router import
+import userRoute from "./routes/userRoute.js";
+
+//router declaration
+app.use("/api/v1/user", userRoute);
 
 
 export {app}
